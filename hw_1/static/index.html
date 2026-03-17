@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高并发读测试系统</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 分布式高并发读测试系统</h1>
+            <p>负载均衡 + 动静分离 + 分布式缓存</p>
+        </header>
+
+        <main>
+            <section class="test-section">
+                <h2>📦 商品查询测试</h2>
+                <div class="input-group">
+                    <label for="productId">商品ID:</label>
+                    <input type="number" id="productId" value="1" min="1" max="100">
+                </div>
+                
+                <div class="button-group">
+                    <button onclick="testBasic()">基础查询（有缓存问题）</button>
+                    <button onclick="testPenetration()">防缓存穿透</button>
+                    <button onclick="testBreakdown()">防缓存击穿</button>
+                    <button onclick="testAvalanche()">防缓存雪崩</button>
+                </div>
+
+                <div id="result" class="result-box">
+                    <p>点击按钮进行测试...</p>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2>📊 系统架构</h2>
+                <div class="architecture">
+                    <div class="layer">
+                        <div class="box">Nginx (80端口)</div>
+                        <div class="arrow">↓</div>
+                    </div>
+                    <div class="layer parallel">
+                        <div class="box">后端:8081</div>
+                        <div class="box">后端:8082</div>
+                    </div>
+                    <div class="layer parallel">
+                        <div class="arrow">↓</div>
+                        <div class="arrow">↓</div>
+                    </div>
+                    <div class="layer parallel">
+                        <div class="box">MySQL</div>
+                        <div class="box">Redis</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cache-section">
+                <h2>💡 缓存问题说明</h2>
+                <div class="cache-cards">
+                    <div class="card">
+                        <h3>缓存穿透</h3>
+                        <p>查询不存在的数据，直接打到数据库</p>
+                        <p class="solution">解决方案：缓存空值</p>
+                    </div>
+                    <div class="card">
+                        <h3>缓存击穿</h3>
+                        <p>热点缓存过期，大量请求同时打到数据库</p>
+                        <p class="solution">解决方案：互斥锁</p>
+                    </div>
+                    <div class="card">
+                        <h3>缓存雪崩</h3>
+                        <p>大量缓存同时过期，数据库压力剧增</p>
+                        <p class="solution">解决方案：随机过期时间</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>分布式系统作业 - 高并发读</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

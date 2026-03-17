@@ -1,0 +1,16 @@
+# 进入 Nginx 目录
+cd C:\Nginx
+
+# 使用相对路径执行
+.\nginx.exe
+
+# 检查 Nginx 是否启动
+netstat -ano | findstr :80
+
+# Redis 启动
+cd C:\Redis
+.\redis-server.exe --service-install
+.\redis-server.exe --service-start
+
+# 查看 Redis 服务状态
+.\redis-cli.exe ping
