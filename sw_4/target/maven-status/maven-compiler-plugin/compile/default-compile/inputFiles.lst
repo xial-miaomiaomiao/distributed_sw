@@ -1,0 +1,14 @@
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\mapper\ProductMapper.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\service\SeckillService.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\dto\SeckillResponse.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\entity\Product.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\consumer\OrderConsumer.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\entity\Order.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\config\KafkaConfig.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\mapper\OrderMapper.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\dto\SeckillRequest.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\service\RedisService.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\controller\SeckillController.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\service\KafkaService.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\SeckillApplication.java
+D:\AAAAAA\distributed_sw\sw_2\src\main\java\com\example\seckill\utils\SnowflakeIdGenerator.java

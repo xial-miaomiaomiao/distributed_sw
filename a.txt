@@ -14,3 +14,21 @@ cd C:\Redis
 
 # 查看 Redis 服务状态
 .\redis-cli.exe ping
+
+# 进入后端目录
+cd D:\AAAAAA\distributed_sw\distributed_sw\hw_1\backend
+
+# 构建 JAR 包
+mvn clean package -DskipTests
+
+cd D:\AAAAAA\distributed_sw\distributed_sw\hw_1\backend
+java -jar target\distributed-hw-1.0.0.jar --server.port=8081
+
+cd D:\AAAAAA\distributed_sw\distributed_sw\hw_1\backend
+java -jar target\distributed-hw-1.0.0.jar --server.port=8082
+
+# 检查端口是否占用
+netstat -ano | findstr :8081
+netstat -ano | findstr :8082
+netstat -ano | findstr :80
+
